@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This is the Bse Model for the project """
+""" This is the Base Model for the project """
 
 
 import uuid
