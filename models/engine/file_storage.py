@@ -27,13 +27,13 @@ class FileStorage:
     def reload(self):
         """ deserializes json file to object """
         from models.base_model import BaseModel
-
+        class_map = {"BaseModel": BaseModel,}
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r') as f:
                 obj_dict = json.load(f)
                 for key, obj_data in obj_dict.items():
                     class_name = obj_data['__class__']
-                    if class_name in globals():
-                        class_ = globals()[class_name]
+                    if class_name in class_map:
+                        class_ = class_map[class_name]
                         obj = class_(**obj_data)
                         self.__objects[key] = obj
