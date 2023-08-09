@@ -12,7 +12,8 @@ class HBNBCommand(cmd.Cmd):
     """Represents command interpreter for HBNB"""
 
     prompt = '(hbnb) '
-    __class_list = ["BaseModel", "User"]
+    __class_list = ["BaseModel", "User", "Place",
+                    "State", "City", "Amenity", "Review"]
 
     def do_quit(self, arg):
         """Exits the command interpreter"""
@@ -26,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Does nothing when an empty line is entered"""
         pass
-    
+
     def do_create(self, arg):
         """ Create new instance and save it """
         if not arg:
@@ -129,6 +130,7 @@ class HBNBCommand(cmd.Cmd):
         instance = all_objects[instance_key]
         setattr(instance, attribute_name, attribute_value)
         instance_save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

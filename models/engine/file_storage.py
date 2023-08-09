@@ -31,6 +31,11 @@ class FileStorage:
         class_map = {
                 "BaseModel": BaseModel,
                 "User": User,
+                "Place": Place,
+                "State": State,
+                "City": City,
+                "Amenity": Amenity,
+                "Review": Review
                 }
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r') as f:
