@@ -8,15 +8,16 @@ from datetime import datetime
 import os
 
 
-class TestBaseModel(unittest.TestCase):
+class Test_BaseModel(unittest.TestCase):
     """ Define test for Base Model """
+    base_model = BaseModel()
+
     def setup(self):
         """ This is the setup method """
-        self.base_model = BaseModel()
+        pass
 
     def tearDown(self):
         """ Tears down the test instance """
-        del self.base_model
         try:
             os.remove("file.json")
         except FileNotFoundError:
@@ -40,5 +41,5 @@ class TestBaseModel(unittest.TestCase):
         """ Tests if updated_at is datetime """
         self.assertIsInstance(self.base_model.updated_at, datetime)
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     unittest.main()
