@@ -1,12 +1,7 @@
-AirBnB clone Project
-
-Project consists of models and tests
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>AirBnB</title>
+<title></title>
 </head>
 <body>
 <h1>AirBnB - Console</h1>
