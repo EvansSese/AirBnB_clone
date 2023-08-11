@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
 </head>
 <body>
 <h1>AirBnB - Console</h1>
@@ -25,6 +24,12 @@ Using a system of JSON to create simple flow of serialization/deserialization an
 </ul>
 </p>
 <h2>How to Start</h2>
+<ol>
+<li>Clone the repository.</li>
+<li>On the cloned repository locate the "console.py" file </li>
+<li>When run the prompt command should appear</li>
+<li>The prompt gets you to the "hbnb" console.</li>
+</ol>
 <h2>How to Use</h2>
 <h2>Examples</h2>
 </body>
