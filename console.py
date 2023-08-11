@@ -103,6 +103,7 @@ class HBNBCommand(cmd.Cmd):
 
         print([str(obj) for key, obj in all_objects.items() if args[0] in key])
 
+
     def do_update(self, arg):
         """update instance based on class name and id """
         if not arg:
