@@ -9,7 +9,7 @@ class User(BaseModel):
     """Represents user class"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        email = ""
-        password = ""
-        first_name = ""
-        last_name = ""
+        self.email = ""
+        self.password = ""
+        self.first_name = ""
+        self.last_name = ""
