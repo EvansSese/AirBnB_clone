@@ -31,6 +31,28 @@ Using a system of JSON to create simple flow of serialization/deserialization an
 <li>The prompt gets you to the "hbnb" console.</li>
 </ol>
 <h2>How to Use</h2>
+<p>
+To use the console, you can run the following commands
+</p>
+<ol>
+<li>create - This command creates an instance of a class</li>
+<li>destroy - This command destroys an instance of a class based on UUID</li>
+<li>show - Shows an object based on given class and UUID</li>
+<li>all - Shows all instances of each class</li>
+<li>update - Updates an instance based on UUID provided</li>
+<li>quit - Exits the console appropriately</li>
+</ol>
 <h2>Examples</h2>
+<p>Here are some examples on how to use the console</p>
+###### Create an oject
+<p>Usage: create <class_name></p>
+```
+(hbnb) create User
+```
+```
+(hbnb) create BaseModel
+3ea77gbc-efb3-4121-bfw5-3dc9847181d8
+(hbnb)
+```
 </body>
 </html>
