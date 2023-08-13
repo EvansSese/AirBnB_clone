@@ -44,8 +44,10 @@ To use the console, you can run the following commands
 </ol>
 <h2>Examples</h2>
 <p>Here are some examples on how to use the console</p>
+</body>
+</html>
 ###### Create an oject
-<p>Usage: create <class_name></p>
+Usage: create <class_name>
 ```
 (hbnb) create User
 ```
@@ -54,5 +56,3 @@ To use the console, you can run the following commands
 3ea77gbc-efb3-4121-bfw5-3dc9847181d8
 (hbnb)
 ```
-</body>
-</html>
