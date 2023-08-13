@@ -111,7 +111,7 @@ class Test_Place(unittest.TestCase):
     def test_place_price_by_night_type(self):
         """ Tests the city id type """
         self.assertIsInstance(self.place.price_by_night, int)
-    
+
     def test_place_latitude_type(self):
         """ Tests the city id type """
         self.assertIsInstance(self.place.latitude, float)
@@ -123,6 +123,7 @@ class Test_Place(unittest.TestCase):
     def test_place_amenity_ids_type(self):
         """ Tests the city id type """
         self.assertIsInstance(self.place.amenity_ids, list)
+
 
 if __name__ == "__main__":
     unittest.main()

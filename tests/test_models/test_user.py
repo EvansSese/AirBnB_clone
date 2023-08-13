@@ -32,7 +32,7 @@ class Test_User(unittest.TestCase):
     def test_user_email_default_value(self):
         """ Tests the default value for email attr """
         self.assertEqual(self.user.email, "")
-    
+
     def test_user_password_default_value(self):
         """ Tests the default user password attr """
         self.assertEqual(self.user.password, "")
@@ -60,6 +60,7 @@ class Test_User(unittest.TestCase):
     def test_user_last_name_type(self):
         """ Tests the type of user last name """
         self.assertIsInstance(self.user.last_name, str)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -52,5 +52,6 @@ class Test_Review(unittest.TestCase):
         """ Tests the type """
         self.assertIsInstance(self.review.text, str)
 
+
 if __name__ == "__main__":
     unittest.main()

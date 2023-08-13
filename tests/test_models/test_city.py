@@ -30,7 +30,7 @@ class Test_City(unittest.TestCase):
     def test_city_state_id_default_value(self):
         """ Tests the default state_id attr """
         self.assertEqual(self.city.state_id, "")
-    
+
     def test_city_name_default_value(self):
         """ Tests the default name attr """
         self.assertEqual(self.city.name, "")
@@ -42,6 +42,7 @@ class Test_City(unittest.TestCase):
     def test_city_name_type(self):
         """ Tests the type of the name attr """
         self.assertIsInstance(self.city.name, str)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -42,8 +42,9 @@ class Test_BaseModel(unittest.TestCase):
 
     def test_str_rep(self):
         """ Tests the str representation """
-        expected_str = "[BaseModel] ({}) {}".format(self.base_model.id, self.base_model.__dict__)
-        self.assertEqual(str(self.base_model), expected_str)
+        exp_str = "[BaseModel] ({}) {}".format(self.base_model.id,
+                                               self.base_model.__dict__)
+        self.assertEqual(str(self.base_model), exp_str)
 
     def test_save_updates_updated_at(self):
         """ Tests the update method """
@@ -58,8 +59,11 @@ class Test_BaseModel(unittest.TestCase):
         self.assertIsInstance(obj_dict, dict)
         self.assertEqual(obj_dict['__class__'], "BaseModel")
         self.assertEqual(obj_dict['id'], self.base_model.id)
-        self.assertEqual(obj_dict['created_at'], self.base_model.created_at.isoformat())
-        self.assertEqual(obj_dict['updated_at'], self.base_model.updated_at.isoformat())
+        self.assertEqual(obj_dict['created_at'],
+                         self.base_model.created_at.isoformat())
+        self.assertEqual(obj_dict['updated_at'],
+                         self.base_model.updated_at.isoformat())
+
 
 if __name__ == '__main__':
     unittest.main()

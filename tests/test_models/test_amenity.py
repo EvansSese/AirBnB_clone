@@ -34,5 +34,6 @@ class Test_Amenity(unittest.TestCase):
         """ Tests the type of name attr """
         self.assertIsInstance(self.amenity.name, str)
 
+
 if __name__ == '__main__':
     unittest.main()
