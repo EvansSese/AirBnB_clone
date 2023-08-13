@@ -45,8 +45,8 @@ To use the console, you can run the following commands
 <h2>Examples</h2>
 <p>Here are some examples on how to use the console</p>
 <p>Create an oject<br>
-Usage: create [class-name]
-<code>
+Usage: create [class-name]</p>
+<p><code>
 (hbnb) create BaseModel
 3ea77gbc-efb3-4121-bfw5-3dc9847181d8
 (hbnb)
