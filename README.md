@@ -50,6 +50,25 @@ Usage: create [class-name]</p>
 (hbnb) create BaseModel
 3ea77gbc-efb3-4121-bfw5-3dc9847181d8
 (hbnb)
-</code></p>
+</code></p> <br>
+<p> Show an object <br>
+Usage: show [class-name]</p>
+<code>
+(hbnb) show BaseModel 7efdb940-d6e9-4b00-b266-3e35a1f14d9c
+[BaseModel] (7efdb940-d6e9-4b00-b266-3e35a1f14d9c) {'id': '7efdb940-d6e9-4b00-b266-3e35a1f14d9c', 'created_at': datetime.datetime(2023, 8, 13, 13, 49, 25, 422462), 'updated_at': datetime.datetime(2023, 8, 13, 13, 49, 25, 422475)}</code></p><br>
+<p>Update an object<br>
+Usage: update [class-name] [uuid]</p>
+<code>
+(hbnb) update User a194b66b-f15a-4c76-964e-9e7fa1cc938a first_name "Evans"
+(hbnb) show User a194b66b-f15a-4c76-964e-9e7fa1cc938a
+[User] (a194b66b-f15a-4c76-964e-9e7fa1cc938a) {'id': 'a194b66b-f15a-4c76-964e-9e7fa1cc938a', 'created_at': datetime.datetime(2023, 8, 13, 13, 53, 32, 878599), 'updated_at': datetime.datetime(2023, 8, 13, 13, 56, 21, 202954), 'first_name': '"Evans"'}
+(hbnb)</code></p><br>
+<p>Destroy an object<br>
+Usage: update [class-name] [uuid]</p>
+<code>
+(hbnb) destroy BaseModel 7efdb940-d6e9-4b00-b266-3e35a1f14d9c
+(hbnb) show BaseModel 7efdb940-d6e9-4b00-b266-3e35a1f14d9c
+* no instance found *
+(hbnb)</code></p><br>
 </body>
 </html>
