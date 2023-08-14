@@ -64,6 +64,15 @@ class Test_BaseModel(unittest.TestCase):
         self.assertEqual(obj_dict['updated_at'],
                          self.base_model.updated_at.isoformat())
 
+    def test_save_and_reload(self):
+        """ Tests the save and reload method """
+        self.base_model.save()
+        new_base_model = BaseModel()
+        new_base_model.reload()
+        self.assertTrue(len(new_base_model.all()) >= 1)
+        key = "BaseModel." + self.base_model.id
+        self.assertTrue(key in new_base_model.all())
+
 
 if __name__ == '__main__':
     unittest.main()

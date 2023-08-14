@@ -18,7 +18,7 @@ class BaseModel:
                 if key != '__class__':
                     setattr(self, key, value)
             if 'id' not in kwargs:
-                self.id = str(uuida.uuid4())
+                self.id = str(uuid.uuid4())
             if 'created_at' not in kwargs:
                 self.created_at = datetime.now()
             if 'updated_at' not in kwargs:
@@ -38,6 +38,14 @@ class BaseModel:
         """ Saves the data """
         self.updated_at = datetime.now()
         storage.save()
+
+    def reload(self):
+        """ Reloads model from storage """
+        storage.reload()
+
+    def all(self):
+        """ Shows all instances """
+        return(storage.all())
 
     def to_dict(self):
         """ Returns a dictionary containing all keys / value """
