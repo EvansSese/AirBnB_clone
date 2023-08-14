@@ -5,6 +5,7 @@
 import unittest
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+from models import storage
 import os
 
 
@@ -46,9 +47,9 @@ class Test_FileStorage(unittest.TestCase):
     def test_reload_method(self):
         """ Tests the method reload """
         base_model = BaseModel()
-        self.file_storage.save()
-        self.file_storage.reload()
-        for obj in self.file_storage.all().values():
+        storage.save()
+        storage.reload()
+        for obj in storage.all().values():
             loaded = obj
         self.assertEqual(base_model.to_dict()['id'], loaded.to_dict()['id'])
 
