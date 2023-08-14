@@ -7,6 +7,7 @@ import json
 
 
 class FileStorage:
+    """ This is file storage class """
     __file_path = "file.json"
     __objects = {}
 
