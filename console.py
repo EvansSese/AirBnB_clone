@@ -3,7 +3,7 @@
 
 
 import cmd
-from models import storage
+from models.__init__ import storage
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -19,6 +19,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     __class_list = ["BaseModel", "User", "Place",
                     "State", "City", "Amenity", "Review"]
+    dot_comms = ["all", "count", "show", "destroy", "update"]
 
     def do_quit(self, arg):
         """Exits the command interpreter"""
@@ -135,6 +136,47 @@ class HBNBCommand(cmd.Cmd):
         instance = all_objects[instance_key]
         setattr(instance, attribute_name, attribute_value)
         instance.save()
+
+    def precmd(self, line):
+        """ Reformat the input """
+        __cmd = ""
+        __cls = ""
+        __id = ""
+        __args = ""
+
+        if not ('.' in line and '(' in line and ')' in line):
+            return line
+
+        try:
+            line_copy = line[:]
+            __cls = line_copy[:line_copy.find('.')]
+            __cmd = line_copy[line_copy.find('.') + 1:line_copy.find('(')]
+            if __cmd not in self.dot_comms:
+                print("** command not found **")
+            line_copy = line_copy[line_copy.find('(') + 1:line_copy.find(')')]
+            if line_copy:
+                line_copy = line_copy.partition(', ')
+                __id = line_copy[0].replace('\"', '')
+                line_copy = line_copy[2].strip()
+                if line_copy:
+                    if line_copy[2] == '{' and line_copy[-1] == '}'\
+                            and type(eval(line_copy)) is dict:
+                        __args = line_copy
+                    else:
+                        __args = line_copy.replace(',', '')
+            line = ' '.join([__cmd, __cls, __id, __args])
+        except Exception as exc:
+            pass
+        finally:
+            return line
+
+    def do_count(self, args):
+        """ Counts the number of instances """
+        count = 0
+        for key, value in storage.all().items():
+            if args == key.split('.')[0]:
+                count += 1
+        print(count)
 
 
 if __name__ == '__main__':
