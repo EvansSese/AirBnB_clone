@@ -6,6 +6,7 @@ import unittest
 from models.base_model import BaseModel
 from datetime import datetime
 import os
+import json
 
 
 class Test_BaseModel(unittest.TestCase):
@@ -72,6 +73,15 @@ class Test_BaseModel(unittest.TestCase):
         self.assertTrue(len(new_base_model.all()) >= 1)
         key = "BaseModel." + self.base_model.id
         self.assertTrue(key in new_base_model.all())
+
+    def test_save(self):
+        """ Tests the save method """
+        new_model = BaseModel()
+        new_model.save()
+        key = "BaseModel." + new_model.id
+        with open("file.json") as f:
+            model = json.load(f)
+            self.assertEqual(model[key], new_model.to_dict())
 
 
 if __name__ == '__main__':
