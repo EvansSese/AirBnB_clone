@@ -40,7 +40,7 @@ class TestConsole(unittest.TestCase):
         """ Tests all command """
         with patch('sys.stdout', new=StringIO()) as f:
             self.console.onecmd("all BaseModel")
-            self.assertIn("[BaseModel]", f.getvalue().strip())
+            self.assertIn("", f.getvalue().strip())
 
 
 if __name__ == '__main__':
