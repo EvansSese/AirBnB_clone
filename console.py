@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This represents the command interpreter"""
+"""This represents the command interpreter console"""
 
 
 import cmd
@@ -159,8 +159,7 @@ class HBNBCommand(cmd.Cmd):
                 __id = line_copy[0].replace('\"', '')
                 line_copy = line_copy[2].strip()
                 if line_copy:
-                    if line_copy[2] == '{' and line_copy[-1] == '}'\
-                            and type(eval(line_copy)) is dict:
+                    if line_copy[2] == '{' and line_copy[-1] == '}' and type(eval(line_copy)) is dict:
                         __args = line_copy
                     else:
                         __args = line_copy.replace(',', '')
