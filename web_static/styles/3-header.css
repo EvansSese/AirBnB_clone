@@ -5,7 +5,7 @@ header {
     margin: auto;
     padding: 0%;
     color: #ffffff;
-    border-bottom: 1px #cccccc;
+    border-bottom: 1px solid#cccccc;
 }
 
 .logo {
